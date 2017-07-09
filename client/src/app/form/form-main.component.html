@@ -1,0 +1,19 @@
+<h2>Вход</h2>
+<form #myForm="ngForm" novalidate>
+                    
+                    <div class="form-group">
+                        <label>Имя пользователя или электронная почта</label>
+                        <input mdInput class="form-control" name="email" [(ngModel)]="email"
+                            required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}" />
+                    </div>
+                    <div class="form-group">
+                        <label>Пароль</label>
+                        <input mdInput class="form-control" name="password" [(ngModel)]="password" required 
+                        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="myForm.invalid"
+                                class="btn btn-default" routerLink="/form-two" (click)="submit(myForm)">Войти</button>           
+                    </div>
+                </form>
+               

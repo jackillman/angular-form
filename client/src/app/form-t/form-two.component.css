@@ -1,0 +1,17 @@
+label{
+  display: block;
+  font-size: 20px;
+  color: #333;
+}
+.form-control{
+  width: 50%;
+  height: 30px;
+  font-size: 25px
+}
+.btn{
+  height: 40px;
+  width: 80px;
+  margin-top: 10px;
+}
+input.ng-touched.ng-invalid {border:solid red 2px;}
+        input.ng-touched.ng-valid {border:solid green 2px;

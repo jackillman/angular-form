@@ -1,0 +1,41 @@
+<h2>Пополнить счет</h2>
+<form #myFormPay="ngForm" novalidate>
+                    
+                    <div class="form-group">
+                        <label>Номер мобильного телефона</label>
+                        <input mdInput class="form-control" name="phone" [(ngModel)]="phone"
+                            required pattern="\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="(050) 123-45-67" />
+                    </div>
+
+                <div class="form-group">
+                        <label>Сумма пополнения в гривнах</label>
+                        <input mdInput class="form-control" name="cash" [(ngModel)]="cash"
+                            required pattern="[0-9]{1,3}"  /> грн.
+                    </div>
+
+                    <div class="form-group">
+                        <label>Электронная почта</label>
+                        <input mdInput class="form-control" name="email" [(ngModel)]="email"
+                            required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}" />
+                    </div>
+                    <div class="form-group">
+                        <label>Кредитная карта</label>
+                        <input mdInput class="form-control" name="card" [(ngModel)]="card"
+                            required pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" placeholder="1234-5678-1234-5678" />
+                    </div>
+                        <div class="form-group">
+                        <label>CVV2</label>
+                        <input mdInput class="form-control" name="cvv" [(ngModel)]="cvv"
+                            required pattern="[0-9]{3}" placeholder="123" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <button [disabled]="myFormPay.invalid"
+                                class="btn btn-default" (click)="submitForm()">Оплатить</button>           
+                    </div>
+                </form>
+
+
+                 <div>                                                                                
+                     <p *ngIf = "myFormPay.valid">Спасибо, что пользуетесь нашими услугами</p>
